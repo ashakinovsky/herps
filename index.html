@@ -107,15 +107,6 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg3);color:var(--te
   <div class="field-group" id="wrapFamily"><label>Family</label><input id="fFamily" placeholder="e.g. Emydidae" autocomplete="off" spellcheck="false"></div>
   <div class="field-group" id="wrapOrder"><label>Order</label><input id="fOrder" placeholder="e.g. Testudines" autocomplete="off" spellcheck="false"></div>
 </div>
-  const fieldEnabled = {fFamily: true, fOrder: true};
-
-function toggleField(fieldId, btnId) {
-  fieldEnabled[fieldId] = !fieldEnabled[fieldId];
-  const wrap = document.getElementById('wrap' + fieldId[1].toUpperCase() + fieldId.slice(2));
-  const btn = document.getElementById(btnId);
-  wrap.style.display = fieldEnabled[fieldId] ? '' : 'none';
-  btn.classList.toggle('active', fieldEnabled[fieldId]);
-}
   <div class="actions">
     <button class="btn" id="hintBtn" onclick="showHint()">Hint</button>
     <button class="btn btn-primary" id="submitBtn" onclick="checkAnswer()">Submit</button>
@@ -124,7 +115,6 @@ function toggleField(fieldId, btnId) {
   <div id="feedbackBox"></div>
   <div class="mode-info">Press <strong>Enter</strong> to submit &middot; <strong>Tab</strong> to move between fields</div>
 </div>
-
 <div class="modal-bg" id="endModal">
   <div class="modal">
     <h2>Quiz complete!</h2>
@@ -430,6 +420,15 @@ document.addEventListener('keydown', e => {
 });
 buildFilterBar();
 rebuildQueue();
+  const fieldEnabled = {fFamily: true, fOrder: true};
+
+function toggleField(fieldId, btnId) {
+  fieldEnabled[fieldId] = !fieldEnabled[fieldId];
+  const wrap = document.getElementById('wrap' + fieldId[1].toUpperCase() + fieldId.slice(2));
+  const btn = document.getElementById(btnId);
+  wrap.style.display = fieldEnabled[fieldId] ? '' : 'none';
+  btn.classList.toggle('active', fieldEnabled[fieldId]);
+}
 </script>
 </body>
 </html>
