@@ -131,11 +131,11 @@ const HERPS = [
   // ── FROGS & TOADS (Anura) ──────────────────────────────────────────────────
   // Hylidae
   {common:"Northern cricket frog",      scientific:"Acris crepitans",              family:"Hylidae",          order:"Anura"},
-  {common:"Cope's gray treefrog",       scientific:"Hyla chrysoscelis",            family:"Hylidae",          order:"Anura"},
+  {common:"Cope's gray treefrog",       scientific:"Hyla chrysoscelis",            family:"Hylidae",          order:"Anura", disabled: true},
   {common:"Green treefrog",             scientific:"Hyla cinerea",                 family:"Hylidae",          order:"Anura"},
-  {common:"Pine woods treefrog",        scientific:"Hyla femoralis",               family:"Hylidae",          order:"Anura"},
+  {common:"Pine woods treefrog",        scientific:"Hyla femoralis",               family:"Hylidae",          order:"Anura",disabled: true},
   {common:"Spring peeper",              scientific:"Pseudacris crucifer",           family:"Hylidae",          order:"Anura"},
-  {common:"Upland chorus frog",         scientific:"Pseudacris feriarum",          family:"Hylidae",          order:"Anura"},
+  {common:"Upland chorus frog",         scientific:"Pseudacris feriarum",          family:"Hylidae",          order:"Anura",disabled: true},
   // Bufonidae
   {common:"American toad",              scientific:"Anaxyrus americanus",          family:"Bufonidae",        order:"Anura"},
   {common:"Fowler's toad",              scientific:"Anaxyrus fowleri",             family:"Bufonidae",        order:"Anura"},
@@ -143,29 +143,29 @@ const HERPS = [
   {common:"American bullfrog",          scientific:"Lithobates catesbeianus",      family:"Ranidae",          order:"Anura"},
   {common:"Green frog",                 scientific:"Lithobates clamitans",         family:"Ranidae",          order:"Anura"},
   {common:"Pickerel frog",              scientific:"Lithobates palustris",         family:"Ranidae",          order:"Anura"},
-  {common:"Southern leopard frog",      scientific:"Lithobates sphenocephala",     family:"Ranidae",          order:"Anura"},
+  {common:"Southern leopard frog",      scientific:"Lithobates sphenocephala",     family:"Ranidae",          order:"Anura",disabled: true},
   // Scaphiopodidae
-  {common:"Eastern spadefoot",          scientific:"Scaphiopus holbrookii",        family:"Scaphiopodidae",   order:"Anura"},
+  {common:"Eastern spadefoot",          scientific:"Scaphiopus holbrookii",        family:"Scaphiopodidae",   order:"Anura",disabled: true},
   // Microhylidae
-  {common:"Eastern narrowmouth toad",   scientific:"Gastrophryne carolinensis",    family:"Microhylidae",     order:"Anura"},
+  {common:"Eastern narrowmouth toad",   scientific:"Gastrophryne carolinensis",    family:"Microhylidae",     order:"Anura",disabled: true},
 
   // ── SALAMANDERS (Caudata) ─────────────────────────────────────────────────
   // Ambystomatidae
-  {common:"Spotted salamander",         scientific:"Ambystoma maculatum",          family:"Ambystomatidae",   order:"Caudata"},
-  {common:"Marbled salamander",         scientific:"Ambystoma opacum",             family:"Ambystomatidae",   order:"Caudata"},
+  {common:"Spotted salamander",         scientific:"Ambystoma maculatum",          family:"Ambystomatidae",   order:"Caudata",disabled: true},
+  {common:"Marbled salamander",         scientific:"Ambystoma opacum",             family:"Ambystomatidae",   order:"Caudata",disabled: true},
   // Plethodontidae
   {common:"Northern dusky salamander",  scientific:"Desmognathus fuscus",          family:"Plethodontidae",   order:"Caudata"},
   {common:"Southern two-lined salamander", scientific:"Eurycea cirrigera",         family:"Plethodontidae",   order:"Caudata"},
   {common:"Three-lined salamander",     scientific:"Eurycea guttolineata",         family:"Plethodontidae",   order:"Caudata"},
-  {common:"Dwarf salamander",           scientific:"Eurycea quadridigitata",       family:"Plethodontidae",   order:"Caudata"},
+  {common:"Dwarf salamander",           scientific:"Eurycea chamberlaini",       family:"Plethodontidae",   order:"Caudata"},
   {common:"Four-toed salamander",       scientific:"Hemidactylium scutatum",       family:"Plethodontidae",   order:"Caudata"},
-  {common:"Redback salamander",         scientific:"Plethodon cinereus",           family:"Plethodontidae",   order:"Caudata"},
+  {common:"Redback salamander",         scientific:"Plethodon cinereus",           family:"Plethodontidae",   order:"Caudata",disabled: true},
   {common:"White-spotted slimy salamander", scientific:"Plethodon cylindraceus",   family:"Plethodontidae",   order:"Caudata"},
-  {common:"Mud salamander",             scientific:"Pseudotriton montanus",        family:"Plethodontidae",   order:"Caudata"},
-  {common:"Red salamander",             scientific:"Pseudotriton ruber",           family:"Plethodontidae",   order:"Caudata"},
+  {common:"Mud salamander",             scientific:"Pseudotriton montanus",        family:"Plethodontidae",   order:"Caudata",disabled: true},
+  {common:"Red salamander",             scientific:"Pseudotriton ruber",           family:"Plethodontidae",   order:"Caudata",disabled: true},
   // Proteidae
-  {common:"Neuse river waterdog",       scientific:"Necturus lewisi",              family:"Proteidae",        order:"Caudata"},
-  {common:"Dwarf waterdog",             scientific:"Necturus punctatus",           family:"Proteidae",        order:"Caudata"},
+  {common:"Neuse river waterdog",       scientific:"Necturus lewisi",              family:"Proteidae",        order:"Caudata",disabled: true},
+  {common:"Dwarf waterdog",             scientific:"Necturus punctatus",           family:"Proteidae",        order:"Caudata",disabled: true},
   // Salamandridae
   {common:"Eastern newt",               scientific:"Notophthalmus viridescens",    family:"Salamandridae",    order:"Caudata"},
 
@@ -173,56 +173,56 @@ const HERPS = [
   // Chelydridae
   {common:"Snapping turtle",            scientific:"Chelydra serpentina",          family:"Chelydridae",      order:"Testudines"},
   // Emydidae
-  {common:"Painted turtle",             scientific:"Chrysemys picta",              family:"Emydidae",         order:"Testudines"},
-  {common:"Spotted turtle",             scientific:"Clemmys guttata",              family:"Emydidae",         order:"Testudines"},
+  {common:"Painted turtle",             scientific:"Chrysemys picta",              family:"Emydidae",         order:"Testudines",disabled: true},
+  {common:"Spotted turtle",             scientific:"Clemmys guttata",              family:"Emydidae",         order:"Testudines",disabled: true},
   {common:"River cooter",               scientific:"Pseudemys concinna",           family:"Emydidae",         order:"Testudines"},
-  {common:"Florida cooter",             scientific:"Pseudemys concinna floridana", family:"Emydidae",         order:"Testudines"},
-  {common:"Yellow-bellied slider",      scientific:"Trachemys scripta scripta",    family:"Emydidae",         order:"Testudines"},
+  {common:"Florida cooter",             scientific:"Pseudemys concinna floridana", family:"Emydidae",         order:"Testudines",disabled: true},
+  {common:"Yellow-bellied slider",      scientific:"Trachemys scripta scripta",    family:"Emydidae",         order:"Testudines",disabled: true},
   {common:"Eastern box turtle",         scientific:"Terrapene carolina",           family:"Emydidae",         order:"Testudines"},
   // Kinosternidae
-  {common:"Eastern mud turtle",         scientific:"Kinosternon subrubrum",        family:"Kinosternidae",    order:"Testudines"},
+  {common:"Eastern mud turtle",         scientific:"Kinosternon subrubrum",        family:"Kinosternidae",    order:"Testudines",disabled: true},
   {common:"Common musk turtle",         scientific:"Sternotherus odoratus",        family:"Kinosternidae",    order:"Testudines"},
 
   // ── LIZARDS (Squamata – Lacertilia) ──────────────────────────────────────
   // Dactyloidae
-  {common:"Green anole",                scientific:"Anolis carolinensis",          family:"Dactyloidae",      order:"Squamata"},
+  {common:"Green anole",                scientific:"Anolis carolinensis",          family:"Dactyloidae",      order:"Squamata",disabled: true},
   // Teiidae
-  {common:"Six-lined racerunner",       scientific:"Aspidoscelis sexlineata",      family:"Teiidae",          order:"Squamata"},
+  {common:"Six-lined racerunner",       scientific:"Aspidoscelis sexlineata",      family:"Teiidae",          order:"Squamata",disabled: true},
   // Phrynosomatidae
   {common:"Eastern fence lizard",       scientific:"Sceloporus undulatus",         family:"Phrynosomatidae",  order:"Squamata"},
   // Anguidae
-  {common:"Slender glass lizard",       scientific:"Ophisaurus attenuatus",        family:"Anguidae",         order:"Squamata"},
+  {common:"Slender glass lizard",       scientific:"Ophisaurus attenuatus",        family:"Anguidae",         order:"Squamata",disabled: true},
   // Scincidae
   {common:"Five-lined skink",           scientific:"Plestiodon fasciatus",         family:"Scincidae",        order:"Squamata"},
-  {common:"Southeastern five-lined skink", scientific:"Plestiodon inexpectatus",   family:"Scincidae",        order:"Squamata"},
+  {common:"Southeastern five-lined skink", scientific:"Plestiodon inexpectatus",   family:"Scincidae",        order:"Squamata",disabled: true},
   {common:"Broadhead skink",            scientific:"Plestiodon laticeps",          family:"Scincidae",        order:"Squamata"},
-  {common:"Ground skink",               scientific:"Scincella lateralis",          family:"Scincidae",        order:"Squamata"},
+  {common:"Ground skink",               scientific:"Scincella lateralis",          family:"Scincidae",        order:"Squamata",disabled: true},
 
   // ── SNAKES (Squamata – Serpentes) ─────────────────────────────────────────
   // Viperidae
   {common:"Copperhead",                 scientific:"Agkistrodon contortrix",       family:"Viperidae",        order:"Squamata"},
   // Colubridae
   {common:"Eastern worm snake",         scientific:"Carphophis amoenus",           family:"Colubridae",       order:"Squamata"},
-  {common:"Scarlet snake",              scientific:"Cemophora coccinea",           family:"Colubridae",       order:"Squamata"},
-  {common:"Black racer",                scientific:"Coluber constrictor",          family:"Colubridae",       order:"Squamata"},
+  {common:"Scarlet snake",              scientific:"Cemophora coccinea",           family:"Colubridae",       order:"Squamata",disabled: true},
+  {common:"Black racer",                scientific:"Coluber constrictor",          family:"Colubridae",       order:"Squamata",disabled: true},
   {common:"Ringneck snake",             scientific:"Diadophis punctatus",          family:"Colubridae",       order:"Squamata"},
-  {common:"Corn snake",                 scientific:"Pantherophis guttatus",        family:"Colubridae",       order:"Squamata"},
+  {common:"Corn snake",                 scientific:"Pantherophis guttatus",        family:"Colubridae",       order:"Squamata",disabled: true},
   {common:"Eastern rat snake",          scientific:"Pantherophis alleghaniensis",  family:"Colubridae",       order:"Squamata"},
-  {common:"Eastern hog-nosed snake",    scientific:"Heterodon platirhinos",        family:"Colubridae",       order:"Squamata"},
+  {common:"Eastern hog-nosed snake",    scientific:"Heterodon platirhinos",        family:"Colubridae",       order:"Squamata",disabled: true},
   {common:"Mole kingsnake",             scientific:"Lampropeltis calligaster",     family:"Colubridae",       order:"Squamata"},
-  {common:"Eastern kingsnake",          scientific:"Lampropeltis getula",          family:"Colubridae",       order:"Squamata"},
-  {common:"Scarlet kingsnake",          scientific:"Lampropeltis elapsoides",      family:"Colubridae",       order:"Squamata"},
-  {common:"Eastern milk snake",         scientific:"Lampropeltis triangulum",      family:"Colubridae",       order:"Squamata"},
+  {common:"Eastern kingsnake",          scientific:"Lampropeltis getula",          family:"Colubridae",       order:"Squamata",disabled: true},
+  {common:"Scarlet kingsnake",          scientific:"Lampropeltis elapsoides",      family:"Colubridae",       order:"Squamata",disabled: true},
+  {common:"Eastern milk snake",         scientific:"Lampropeltis triangulum",      family:"Colubridae",       order:"Squamata",disabled: true},
   {common:"Northern water snake",       scientific:"Nerodia sipedon",              family:"Colubridae",       order:"Squamata"},
   {common:"Rough green snake",          scientific:"Opheodrys aestivus",           family:"Colubridae",       order:"Squamata"},
-  {common:"Queen snake",                scientific:"Regina septemvittata",         family:"Colubridae",       order:"Squamata"},
+  {common:"Queen snake",                scientific:"Regina septemvittata",         family:"Colubridae",       order:"Squamata",disabled: true},
   {common:"Brown snake",                scientific:"Storeria dekayi",              family:"Colubridae",       order:"Squamata"},
   {common:"Redbelly snake",             scientific:"Storeria occipitomaculata",    family:"Colubridae",       order:"Squamata"},
-  {common:"Southeastern crowned snake", scientific:"Tantilla coronata",            family:"Colubridae",       order:"Squamata"},
-  {common:"Eastern ribbon snake",       scientific:"Thamnophis sauritus",          family:"Colubridae",       order:"Squamata"},
+  {common:"Southeastern crowned snake", scientific:"Tantilla coronata",            family:"Colubridae",       order:"Squamata",disabled: true},
+  {common:"Eastern ribbon snake",       scientific:"Thamnophis sauritus",          family:"Colubridae",       order:"Squamata",disabled: true},
   {common:"Common garter snake",        scientific:"Thamnophis sirtalis",          family:"Colubridae",       order:"Squamata"},
-  {common:"Rough earth snake",          scientific:"Virginia striatula",           family:"Colubridae",       order:"Squamata"},
-  {common:"Smooth earth snake",         scientific:"Virginia valeriae",            family:"Colubridae",       order:"Squamata"},
+  {common:"Rough earth snake",          scientific:"Virginia striatula",           family:"Colubridae",       order:"Squamata",disabled: true},
+  {common:"Smooth earth snake",         scientific:"Virginia valeriae",            family:"Colubridae",       order:"Squamata",disabled: true},
 ];
 
 // Cache: scientific name -> photo URL
@@ -252,7 +252,7 @@ let loadingToken = 0;
 
 function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
 function rebuildQueue(){
-  filtered = HERPS.filter(m => activeOrders.has(m.order));
+  filtered = HERPS.filter(m => activeOrders.has(m.order)&& !m.disabled);
   queue = shuffle([...filtered]);
   current = 0; score = 0; total = 0; streak = 0; hintStage = 0; missedAnimals = []; quizStartTime = Date.now();
   updateScorebar(); loadAnimal();
