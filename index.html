@@ -146,6 +146,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg3);color:var(--te
     <p id="finalTime" style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px"></p>
     <p id="finalMsg"></p>
     <button class="btn btn-primary" id="retryBtn" style="width:100%;margin-bottom:8px" onclick="retryMissed()">Retry missed questions</button>
+    <button class="btn" id="retryHintedBtn" style="width:100%;margin-bottom:8px" onclick="retryHinted()">Retry hinted questions</button>
     <button class="btn" style="width:100%" onclick="restartQuiz()">Start over (all questions)</button>
   </div>
 </div>
@@ -323,6 +324,7 @@ const ORDERS = [...new Set(HERPS.map(m => m.order))].sort();
 let filtered = [...HERPS], queue = [], current = 0, score = 0, total = 0, streak = 0, answered = false, hintStage = 0;
 let activeOrders = new Set(ORDERS);
 let missedAnimals = [];
+let hintedAnimals = [];
 let quizStartTime = null;
 let loadingToken = 0;
 let obsPhotos = [];   // NC (or worldwide fallback) observation photos for right panel
@@ -333,6 +335,7 @@ function rebuildQueue(){
   filtered = HERPS.filter(m => activeOrders.has(m.order)&& !m.disabled);
   queue = shuffle([...filtered]);
   current = 0; score = 0; total = 0; streak = 0; hintStage = 0; missedAnimals = []; quizStartTime = Date.now();
+  current=0; score=0; total=0; streak=0; hintStage=0; missedAnimals=[]; hintedAnimals=[]; quizStartTime=Date.now();
   updateScorebar(); loadAnimal();
 }
 
@@ -473,6 +476,8 @@ function checkAnswer(){
 function nextAnimal(){current++; loadAnimal();}
 function showHint(){
   const m = queue[current];
+  if (hintStage === 0 && !hintedAnimals.find(a => a.scientific === m.scientific)) {
+    hintedAnimals.push(m);
   const hints = [
     'Order: ' + m.order,
     'Family: ' + m.family,
@@ -509,9 +514,26 @@ function showEndModal(){
   }
   document.getElementById('endModal').classList.add('open');
 }
+  const retryHintedBtn = document.getElementById('retryHintedBtn');
+if (hintedAnimals.length > 0) {
+  retryHintedBtn.style.display = 'block';
+  retryHintedBtn.textContent = 'Retry ' + hintedAnimals.length + ' hinted question' + (hintedAnimals.length === 1 ? '' : 's');
+} else {
+  retryHintedBtn.style.display = 'none';
+}
+  
 function retryMissed(){
   document.getElementById('endModal').classList.remove('open');
   queue = shuffle([...missedAnimals]);
+  missedAnimals = [];
+  current = 0; score = 0; total = 0; streak = 0; hintStage = 0; quizStartTime = Date.now();
+  current=0; score=0; total=0; streak=0; hintStage=0; missedAnimals=[]; hintedAnimals=[]; quizStartTime=Date.now();
+  updateScorebar(); loadAnimal();
+}
+function retryHinted() {
+  document.getElementById('endModal').classList.remove('open');
+  queue = shuffle([...hintedAnimals]);
+  hintedAnimals = [];
   missedAnimals = [];
   current = 0; score = 0; total = 0; streak = 0; hintStage = 0; quizStartTime = Date.now();
   updateScorebar(); loadAnimal();
