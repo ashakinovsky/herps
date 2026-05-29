@@ -108,9 +108,6 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg3);color:var(--te
       <div class="panel-label">iNaturalist taxon</div>
       <div class="panel-credit" id="taxonCredit">© iNaturalist</div>
     </div>
-    <div id="audioPlayer" style="margin-bottom:16px;display:none">
-      <audio id="quizAudio" controls style="width:100%;height:36px"></audio>
-    </div>
     <!-- Right: NC observation photo (refreshable) -->
     <div class="img-panel" id="panelObs">
       <div class="img-loading-msg" id="obsLoadMsg">Loading…</div>
@@ -119,6 +116,9 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg3);color:var(--te
       <div class="panel-label" id="obsLabel">📍 NC observation</div>
       <div class="panel-credit" id="obsCredit">© iNaturalist</div>
       <button class="panel-refresh" id="refreshBtn" onclick="refreshObsPhoto()">🔄 New photo</button>
+    </div>
+    <div id="audioPlayer" style="margin-bottom:16px;display:none">
+      <audio id="quizAudio" controls style="width:100%;height:36px"></audio>
     </div>
   </div>
   <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap" id="toggleBar">
