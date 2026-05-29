@@ -478,6 +478,7 @@ function showHint(){
   const m = queue[current];
   if (hintStage === 0 && !hintedAnimals.find(a => a.scientific === m.scientific)) {
     hintedAnimals.push(m);
+  }
   const hints = [
     'Order: ' + m.order,
     'Family: ' + m.family,
@@ -512,21 +513,19 @@ function showEndModal(){
   } else {
     retryBtn.style.display = 'none';
   }
+  const retryHintedBtn = document.getElementById('retryHintedBtn');
+  if (hintedAnimals.length > 0) {
+    retryHintedBtn.style.display = 'block';
+    retryHintedBtn.textContent = 'Retry ' + hintedAnimals.length + ' hinted question' + (hintedAnimals.length === 1 ? '' : 's');
+  } else {
+    retryHintedBtn.style.display = 'none';
+  }
   document.getElementById('endModal').classList.add('open');
 }
-  const retryHintedBtn = document.getElementById('retryHintedBtn');
-if (hintedAnimals.length > 0) {
-  retryHintedBtn.style.display = 'block';
-  retryHintedBtn.textContent = 'Retry ' + hintedAnimals.length + ' hinted question' + (hintedAnimals.length === 1 ? '' : 's');
-} else {
-  retryHintedBtn.style.display = 'none';
-}
-  
+ 
 function retryMissed(){
   document.getElementById('endModal').classList.remove('open');
   queue = shuffle([...missedAnimals]);
-  missedAnimals = [];
-  current = 0; score = 0; total = 0; streak = 0; hintStage = 0; quizStartTime = Date.now();
   current=0; score=0; total=0; streak=0; hintStage=0; missedAnimals=[]; hintedAnimals=[]; quizStartTime=Date.now();
   updateScorebar(); loadAnimal();
 }
