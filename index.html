@@ -394,7 +394,19 @@ async function loadAnimal(){
   const usingNC = ncPhotos.length > 0;
   obsPhotos = usingNC ? ncPhotos : wwPhotos;
   obsIndex = 0;
-  document.getElementById('obsLabel').textCo
+  document.getElementById('obsLabel').textContent = usingNC ? '📍 NC observation' : '🌎 Worldwide obs.';
+
+  if(obsPhotos.length > 0) {
+    setImgPanel('obsImg', 'obsNoImg', 'obsCredit', obsPhotos[0].url, m.common);
+    if(obsPhotos.length > 1) {
+      const btn = document.getElementById('refreshBtn');
+      btn.style.display = 'block';
+      btn.disabled = false;
+    }
+  } else {
+    document.getElementById('obsNoImg').style.display = 'flex';
+  }
+}
 function setImgPanel(imgId, noImgId, creditId, url, label) {
   const img = document.getElementById(imgId);
   const noImg = document.getElementById(noImgId);
