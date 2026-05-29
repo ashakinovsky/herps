@@ -347,24 +347,24 @@ async function loadAnimal(){
 
   // Reset both panels
   ['taxonImg','obsImg'].forEach(id => { const el = document.getElementById(id); el.style.display='none'; el.src=''; });
-
-  const audioPlayer = document.getElementById('audioPlayer');
-const quizAudio = document.getElementById('quizAudio');
-quizAudio.pause();
-quizAudio.src = '';
-if (AUDIO[m.scientific]) {
-  quizAudio.src = AUDIO[m.scientific];
-  audioPlayer.style.display = 'block';
-} else {
-  audioPlayer.style.display = 'none';
-}
-  
   ['taxonNoImg','obsNoImg'].forEach(id => document.getElementById(id).style.display='none');
   ['taxonCredit','obsCredit'].forEach(id => document.getElementById(id).style.display='none');
   document.getElementById('taxonLoadMsg').style.display = 'flex';
   document.getElementById('obsLoadMsg').style.display = 'flex';
   document.getElementById('refreshBtn').style.display = 'none';
   document.getElementById('obsLabel').textContent = '📍 NC observation';
+
+  // Audio
+  const audioPlayer = document.getElementById('audioPlayer');
+  const quizAudio = document.getElementById('quizAudio');
+  quizAudio.pause();
+  quizAudio.src = '';
+  if (AUDIO[m.scientific]) {
+    quizAudio.src = AUDIO[m.scientific];
+    audioPlayer.style.display = 'block';
+  } else {
+    audioPlayer.style.display = 'none';
+  }
 
   ['fCommon','fScientific','fFamily','fOrder'].forEach(id => {
     const el = document.getElementById(id); el.value = ''; el.className = ''; el.disabled = false;
@@ -381,7 +381,6 @@ if (AUDIO[m.scientific]) {
   const result = await fetchPhotos(m.scientific);
   if(token !== loadingToken) return;
 
-  // Left panel: official taxon photo
   document.getElementById('taxonLoadMsg').style.display = 'none';
   if(result && result.taxonUrl) {
     setImgPanel('taxonImg', 'taxonNoImg', 'taxonCredit', result.taxonUrl, m.common);
@@ -389,27 +388,13 @@ if (AUDIO[m.scientific]) {
     document.getElementById('taxonNoImg').style.display = 'flex';
   }
 
-  // Right panel: NC (or worldwide) observation photos
   document.getElementById('obsLoadMsg').style.display = 'none';
   const ncPhotos = result ? result.ncPhotos : [];
   const wwPhotos = result ? result.worldwidePhotos : [];
   const usingNC = ncPhotos.length > 0;
   obsPhotos = usingNC ? ncPhotos : wwPhotos;
   obsIndex = 0;
-  document.getElementById('obsLabel').textContent = usingNC ? '📍 NC observation' : '🌎 Worldwide obs.';
-
-  if(obsPhotos.length > 0) {
-    setImgPanel('obsImg', 'obsNoImg', 'obsCredit', obsPhotos[0].url, m.common);
-    if(obsPhotos.length > 1) {
-      const btn = document.getElementById('refreshBtn');
-      btn.style.display = 'block';
-      btn.disabled = false;
-    }
-  } else {
-    document.getElementById('obsNoImg').style.display = 'flex';
-  }
-}
-
+  document.getElementById('obsLabel').textCo
 function setImgPanel(imgId, noImgId, creditId, url, label) {
   const img = document.getElementById(imgId);
   const noImg = document.getElementById(noImgId);
