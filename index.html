@@ -510,13 +510,15 @@ function showEndModal(){
   } else {
     retryBtn.style.display = 'none';
   }
-  const retryHintedBtn = document.getElementById('retryHintedBtn');
-  if (hintedAnimals.length > 0) {
-    retryHintedBtn.style.display = 'block';
-    retryHintedBtn.textContent = 'Retry ' + hintedAnimals.length + ' hinted question' + (hintedAnimals.length === 1 ? '' : 's');
-  } else {
-    retryHintedBtn.style.display = 'none';
-  }
+  const combined = [...new Set([...missedAnimals, ...hintedAnimals].map(a => a.scientific))]
+  .map(sci => HERPS.find(h => h.scientific === sci));
+const retryHintedBtn = document.getElementById('retryHintedBtn');
+if (combined.length > 0) {
+  retryHintedBtn.style.display = 'block';
+  retryHintedBtn.textContent = 'Retry missed + hinted (' + combined.length + ' questions)';
+} else {
+  retryHintedBtn.style.display = 'none';
+}
   document.getElementById('endModal').classList.add('open');
 }
  
@@ -528,7 +530,9 @@ function retryMissed(){
 }
 function retryHinted() {
   document.getElementById('endModal').classList.remove('open');
-  queue = shuffle([...hintedAnimals]);
+  const combined = [...new Set([...missedAnimals, ...hintedAnimals].map(a => a.scientific))]
+    .map(sci => HERPS.find(h => h.scientific === sci));
+  queue = shuffle([...combined]);
   hintedAnimals = [];
   missedAnimals = [];
   current = 0; score = 0; total = 0; streak = 0; hintStage = 0; quizStartTime = Date.now();
